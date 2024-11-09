@@ -3,7 +3,13 @@ import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <nav style={{ display: "flex", justifyContent: "space-around" }}>
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          background: "turquoise",
+        }}
+      >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
