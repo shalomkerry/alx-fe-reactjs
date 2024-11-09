@@ -7,7 +7,7 @@ function Navbar() {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          background: "turquoise",
+          backgroundColor: "turquoise",
         }}
       >
         <Link to="/">Home</Link>
