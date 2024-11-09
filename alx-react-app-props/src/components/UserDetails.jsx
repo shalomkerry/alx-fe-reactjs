@@ -1,4 +1,4 @@
-import React, { useContext, UserContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
 function UserDetails() {
   let Data = useContext(UserContext);
