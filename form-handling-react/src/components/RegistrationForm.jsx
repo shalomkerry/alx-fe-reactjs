@@ -24,17 +24,17 @@ function RegistrationForm(){
     let isValid = true;
     let newErrors = { username: '', email: '', password: '' };
 
-    if (!username.trim()) {
+    if (!username) {
       newErrors.username = 'Username is required';
       isValid = false;
     }
 
-    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
+    if (!email) {
       newErrors.email = 'Valid email is required';
       isValid = false;
     }
 
-    if (password.length < 6) {
+    if (!password) {
       newErrors.password = 'Password must be at least 6 characters long';
       isValid = false;
     }
