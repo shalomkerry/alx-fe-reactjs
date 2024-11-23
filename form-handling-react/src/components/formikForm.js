@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const FormikForm = () => {
-  // Validation Schema using Yup
+
   const validationSchema = Yup.object({
     username: Yup.string()
       .required('Username is required')
@@ -16,18 +16,18 @@ const FormikForm = () => {
       .min(6, 'Password must be at least 6 characters'),
   });
 
-  // Initial form values
+ 
   const initialValues = {
     username: '',
     email: '',
     password: '',
   };
 
-  // Form submission handler
+  
   const handleSubmit = (values, { resetForm }) => {
     alert('Form submitted successfully!');
     console.log('Form Data:', values);
-    resetForm(); // Resets the form after submission
+    resetForm(); 
   };
 
   return (
