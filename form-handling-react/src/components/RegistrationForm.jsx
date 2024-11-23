@@ -35,10 +35,12 @@ function RegistrationForm(){
     <label htmlFor="password" >Enter Your Password</label>
     <input type="password" name="password" value={password} onChange={(e)=>{
         setPassword(e.target.value)
-        if(!password){
-            error=true;
-        }
+       
     }} required/>
+    {function validate(){
+        if(!password){
+        return 'error'
+    }}}
         <input type="submit" value='Submit' />
     </form>   
     </>)
