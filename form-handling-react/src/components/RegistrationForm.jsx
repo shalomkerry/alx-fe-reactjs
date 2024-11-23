@@ -13,33 +13,31 @@ function RegistrationForm(){
 
         console.log(username,email,password)
     }
-    function validate(errors){
-        if(!username){
-            setErrors('Insert Name')
-        }
-        if(!email){
-            setErrors('Insert Email')
-        }
-        if(!password){
-            setErrors('Insert Password')
-        }
-        return errors;
-    }
+
     return(<>
     <NavBar/>
  <form onSubmit={handleSubmit} style={{color:'beige',display:"flex",flexDirection:'column',gap:'2em'}} >
     <label htmlFor="name">Enter Your User Name</label>
     <input type="text" name="name" value={username} onChange={(e)=>{
-        setUsername(e.target.value)
+        setUsername(e.target.value);
+        if(!username){
+            error=true
+        }
     }} required/>
     
     <label htmlFor="email">Enter Your Email</label>
     <input type="email" name="email" value={email} onChange={(e)=>{
         setEmail(e.target.value)
+        if(!email){
+            error=true;
+        }
     } }required/>
     <label htmlFor="password" >Enter Your Password</label>
     <input type="password" name="password" value={password} onChange={(e)=>{
         setPassword(e.target.value)
+        if(!password){
+            error=true;
+        }
     }} required/>
         <input type="submit" value='Submit' />
     </form>   
