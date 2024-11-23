@@ -3,7 +3,7 @@ import useTodosStore from "../stores/useTodosStore";
 import AddToDo from "./AddToDo";
 import { useState } from "react";
 
-function HomePage(){
+function TodoList(){
     const todo  = useTodosStore(state=>state.todos)
     const remove = useTodosStore(state=>state.removeTodo)
 
@@ -56,4 +56,4 @@ function HomePage(){
         </>
     )
 }
-export default HomePage;
+export default TodoList;
