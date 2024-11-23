@@ -15,6 +15,11 @@ function PostsComponent(){
     const {isPending,error,data,isLoading,isError} = useQuery({
         queryKey:['posts'],
         queryFn:fetchPosts,
+        cacheTime:1000,
+        staleTime:1000,
+        refetchOnWindowFocus:true,
+        keepPreviousData:true,
+        
 
     })
 
