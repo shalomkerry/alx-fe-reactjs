@@ -12,7 +12,7 @@ function PostsComponent(){
     //     queryKey:['posts'],
     //     queryFn:()=>fetch('https://jsonplaceholder.typicode.com/posts').then((res)=>res.json()),
     // })
-    const {isPending,error,data,isLoading,isError} = useQuery({
+    const {isPending,error,data,isLoading,isError,refetch} = useQuery({
         queryKey:['posts'],
         queryFn:fetchPosts,
         cacheTime:1000,
@@ -45,7 +45,7 @@ if(isPending) return    <div>'Loading...'</div>
        ):isLoading(
         <h5>Loading</h5>
        )}
- 
+ <button onClick={()=>refetch}>Refetch Data</button>
     </>
     )
 }
