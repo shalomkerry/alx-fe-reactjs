@@ -1,12 +1,10 @@
+import { useState } from "react";
 import NavBar from "./NavBar";
-import React, { useState } from 'react';
+function RegistrationForm(){
 
-function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const [errors, setErrors] = useState({
     username: '',
@@ -16,27 +14,27 @@ function RegistrationForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+
+    if (name === 'username') setUsername(value);
+    else if (name === 'email') setEmail(value);
+    else if (name === 'password') setPassword(value);
   };
 
   const validate = () => {
     let isValid = true;
     let newErrors = { username: '', email: '', password: '' };
 
-    if (!formData.username.trim()) {
+    if (!username.trim()) {
       newErrors.username = 'Username is required';
       isValid = false;
     }
 
-    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = 'Valid email is required';
       isValid = false;
     }
 
-    if (formData.password.length < 6) {
+    if (password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters long';
       isValid = false;
     }
@@ -49,56 +47,39 @@ function RegistrationForm() {
     e.preventDefault();
     if (validate()) {
       alert('Form submitted successfully!');
-      console.log(formData);
+      console.log({ username, email, password });
       // Reset form if needed
-      setFormData({ username: '', email: '', password: '' });
+      setUsername('');
+      setEmail('');
+      setPassword('');
       setErrors({ username: '', email: '', password: '' });
     }
   };
 
-  return (
-    <div>
-      <h1>Basic Form Validation</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-          {errors.username && <span style={{ color: 'red' }}>{errors.username}</span>}
-        </div>
-
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
-        </div>
-
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          {errors.password && <span style={{ color: 'red' }}>{errors.password}</span>}
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
+    return(<>
+    <NavBar/>
+ <form onSubmit={handleSubmit} style={{color:'beige',display:"flex",flexDirection:'column',gap:'2em'}} >
+    <label htmlFor="name">Enter Your User Name</label>
+    <input type="text" name="name" value={username} onChange={(e)=>{
+        setUsername(e.target.value);
+      
+    }} />
+{errors.username?<p>{errors.username}</p>:<></>}    
+    
+    <label htmlFor="email">Enter Your Email</label>
+    <input type="email" name="email" value={email} onChange={(e)=>{
+        setEmail(e.target.value)
+      
+    } }/>
+    {errors.email?<p>{errors.email}</p>:<></>}
+    <label htmlFor="password" >Enter Your Password</label>
+    <input type="password" name="password" value={password} onChange={(e)=>{
+        setPassword(e.target.value)
+       
+    }} />
+  {errors.password?<p>{errors.password}</p>:<></>}
+        <input type="submit" value='Submit' />
+    </form>   
+    </>)
 }
-
-
-
 export default RegistrationForm;
