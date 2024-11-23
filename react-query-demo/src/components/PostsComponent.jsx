@@ -12,7 +12,7 @@ function PostsComponent(){
     //     queryKey:['posts'],
     //     queryFn:()=>fetch('https://jsonplaceholder.typicode.com/posts').then((res)=>res.json()),
     // })
-    const {isPending,error,data} = useQuery({
+    const {isPending,error,data,isLoading,isError} = useQuery({
         queryKey:['posts'],
         queryFn:fetchPosts,
 
@@ -24,15 +24,24 @@ if(isPending) return    <div>'Loading...'</div>
     return(
         <>
         <h1>Posts</h1>
-    {data.slice(0,3).map(item=>(
+        
+       {data?(
+        <>
+            {data.slice(0,3).map(item=>(
 <>
-<h2>{item.userId}</h2>
-<h3>{item.title}</h3>
-<p>{item.body}</p>
+<h2 key={item.userId}>{item.userId}</h2>
+<h3 key={item.title}>{item.title}</h3>
+<p key={item.body}>{item.body}</p>
 
-</>
-    ))}
+</>))}
         </>
+       ):isError?(
+        <h5>{error.message}</h5>
+       ):isLoading(
+        <h5>Loading</h5>
+       )}
+ 
+    </>
     )
 }
 export default PostsComponent;
