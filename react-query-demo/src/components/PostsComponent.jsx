@@ -25,7 +25,7 @@ function PostsComponent(){
 
 if(isPending) return    <div>'Loading...'</div>
     if(error) return <div>'Error:{error.message}</div> 
- console.log(data)
+ 
     return(
         <>
         <h1>Posts</h1>
@@ -45,7 +45,9 @@ if(isPending) return    <div>'Loading...'</div>
        ):isLoading(
         <h5>Loading</h5>
        )}
- <button onClick={()=>refetch()}>Refetch Data</button>
+ <button onClick={()=>{
+    refetch()
+    }}>Refetch Data</button>
     </>
     )
 }
