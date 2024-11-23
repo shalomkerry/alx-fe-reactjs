@@ -6,12 +6,24 @@ function RegistrationForm(){
     const [username,setUsername] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-
+    const[errors,setErrors] = useState("")
 
     function handleSubmit(e){
         e.preventDefault();
 
         console.log(username,email,password)
+    }
+    function validate(errors){
+        if(!username){
+            setErrors('Insert Name')
+        }
+        if(!email){
+            setErrors('Insert Email')
+        }
+        if(!password){
+            setErrors('Insert Password')
+        }
+        return errors;
     }
     return(<>
     <NavBar/>
@@ -20,6 +32,7 @@ function RegistrationForm(){
     <input type="text" name="name" value={username} onChange={(e)=>{
         setUsername(e.target.value)
     }} required/>
+    
     <label htmlFor="email">Enter Your Email</label>
     <input type="email" name="email" value={email} onChange={(e)=>{
         setEmail(e.target.value)
