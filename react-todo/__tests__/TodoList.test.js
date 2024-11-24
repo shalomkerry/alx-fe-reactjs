@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, getByRole } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TodoList from '../src/components/TodoLists';
+import TodoList from '../src/components/TodoList';
 test('render toDoList',()=>{
     render(<TodoList/>)
     expect(screen.getByText('Tasks')).toBeInTheDocument();
