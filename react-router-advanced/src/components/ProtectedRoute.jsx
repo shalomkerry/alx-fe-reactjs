@@ -5,11 +5,10 @@ import { Navigate } from "react-router-dom";
 const ProtectedRoute = ({ isAuthenticated, children }) => {
 
 const useAuth = () => {
-  // Simulate authentication state (replace with real logic)
   const [isAuthenticated, setIsAuthenticated] = useState(true); // Change to `false` for testing unauthenticated behavior
 
-  const login = () => setIsAuthenticated(true);  // Mock login function
-  const logout = () => setIsAuthenticated(false); // Mock logout function
+  const login = () => setIsAuthenticated(true); 
+  const logout = () => setIsAuthenticated(false);
 
 
   return { isAuthenticated, login, logout };
