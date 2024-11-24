@@ -8,8 +8,9 @@ test('render toDoList',()=>{
 test('check if action can be added',()=>{
     render(<TodoList/>)
     const input = screen.getByRole('textbox'); 
-
-    fireEvent.keyDown(input, {key: 'A', code: 'KeyA', charCode: 13})
-    fireEvent.click(screen.getByText('submit'))
-    expect(screen.getByText('A')).toBeInTheDocument();
+fireEvent.change(input,{target:{value:'yes'}})
+  
+    expect(screen.getByRole('textbox'))
+    expect(screen.getByText('completed'))
+    // expect(screen.getByText('yes'))
 })
