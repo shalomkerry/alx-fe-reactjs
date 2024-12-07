@@ -34,7 +34,11 @@ return(
 </Link>
 </>
 ))):'loading'}
-
+<Link to='/add-recipe'>
+<div> Greetings sir. Can you send us the youtube link of this weeks live session recordings please? thank you</div>
+'something'
+<button>Go To Add Page</button>
+</Link>
     </>
 )
     
