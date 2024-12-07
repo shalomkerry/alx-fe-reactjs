@@ -1,19 +1,67 @@
 {
-  "title":"womething",
 "items":[
   {
     "id": 1,
+    "name":"spaghetti",
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://dl.dropbox.com/scl/fi/qr7d78gpgme1ymn08sy4x/pexels-photo-1279330.jpeg?rlkey=l6xxtytt96rcprj4nn46x2o13&st=y4jaj3ah&dl=0",
 
-    "image": "https://dl.dropbox.com/scl/fi/qr7d78gpgme1ymn08sy4x/pexels-photo-1279330.jpeg?rlkey=l6xxtytt96rcprj4nn46x2o13&st=y4jaj3ah&dl=0"
+      "ingredients": [
+        { "item": "spaghetti", "quantity": "400g" },
+        { "item": "pancetta (or bacon)", "quantity": "150g", "description": "diced" },
+        { "item": "large eggs", "quantity": "2" },
+        { "item": "Parmesan cheese", "quantity": "50g", "description": "grated" },
+        { "item": "Pecorino Romano", "quantity": "50g", "description": "grated (optional)" },
+        { "item": "garlic", "quantity": "2 cloves", "description": "minced" },
+        { "item": "salt", "quantity": "to taste" },
+        { "item": "freshly ground black pepper", "quantity": "to taste" },
+        { "item": "olive oil", "quantity": "1 tbsp" },
+        { "item": "fresh parsley", "quantity": "to garnish", "description": "chopped" }
+      ],
+
+      "instructions": [
+        "Bring a large pot of salted water to a boil. Add spaghetti and cook until al dente. Reserve 1 cup of pasta water before draining.",
+        "In a bowl, whisk together eggs, Parmesan, Pecorino (if using), and black pepper. Set aside.",
+        "Heat olive oil in a pan over medium heat. Cook pancetta until crispy, then add garlic and sauté for 30 seconds.",
+        "Lower heat and add spaghetti to the pan with pancetta. Toss to combine.",
+        "Remove the pan from heat. Pour the egg mixture into the pan and toss quickly to coat the pasta. Add reserved pasta water to create a creamy consistency.",
+        "Taste and adjust seasoning. Garnish with parsley and serve immediately."
+      ]
+
   },
   {
     "id": 2,
+
+    "name":"chicken",
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
 
-    "image": "https://dl.dropbox.com/scl/fi/nq1f4gjed75pyre9iov46/pexels-photo-2338407.jpeg?rlkey=hhvgh0g7g811iuiupalz7zonx&st=nb7vn3gd&dl=0"
+    "image": "https://dl.dropbox.com/scl/fi/nq1f4gjed75pyre9iov46/pexels-photo-2338407.jpeg?rlkey=hhvgh0g7g811iuiupalz7zonx&st=nb7vn3gd&dl=0",
+
+      "ingredients":  [
+          { "item": "boneless chicken thighs or breasts", "quantity": "500g", "description": "cubed" },
+          { "item": "plain yogurt", "quantity": "1 cup" },
+          { "item": "lemon juice", "quantity": "2 tbsp" },
+          { "item": "garlic paste", "quantity": "1 tbsp" },
+          { "item": "ginger paste", "quantity": "1 tbsp" },
+          { "item": "ground cumin", "quantity": "2 tsp" },
+          { "item": "ground coriander", "quantity": "2 tsp" },
+          { "item": "turmeric", "quantity": "1 tsp" },
+          { "item": "chili powder", "quantity": "1 tsp" },
+          { "item": "salt", "quantity": "to taste" }
+        ],
+
+      "instructions": [
+        "Combine all marinade ingredients in a bowl. Add chicken and mix well. Refrigerate for at least 2 hours or overnight.",
+        "Cook the marinated chicken on a grill, grill pan, or oven broiler until charred and cooked through. Set aside.",
+        "Heat butter in a pan over medium heat. Sauté onions until golden brown. Add garlic and ginger, cooking for another minute.",
+        "Stir in cumin, paprika, garam masala, and turmeric. Cook for 30 seconds until fragrant.",
+        "Add crushed tomatoes and simmer for 10 minutes, stirring occasionally.",
+        "Lower the heat and stir in heavy cream. Add the cooked chicken and simmer for 10–15 minutes.",
+        "Garnish with fresh cilantro. Serve hot with naan or steamed basmati rice."
+      ]
+        
   }
 ]    
 }
