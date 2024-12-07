@@ -30,7 +30,7 @@ case "spaghetti":
  
 <div>
 
-<div>
+<div className="shadow-md font-mono">
 
     <img src={`${item.image}`} alt="" className="rounded-md mx-auto" />
 <p className="text-center">{item.title}</p>
@@ -65,7 +65,7 @@ case "spaghetti":
  
 <div>
 
-<div>
+<div className="shadow-md font-mono">
 
     <img src={`${item.image}`} alt="" className="rounded-md mx-auto" />
 <p className="text-center italic text-xl">{item.title}</p>
