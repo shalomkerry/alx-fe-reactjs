@@ -5,13 +5,13 @@ const AddRecipe = ()=>{
     const {recipeImage,setRecipeImage} = useState('')
     const {ingredients,setRecipeIngredients} = useState('')
 
-    function submitData(e){
+    function handleSubmit(e){
 e.preventDefault();
-console.log(recipeTitle)
+
     }
     return(
         <>
-        <form onSubmit={submitData} className="flex flex-col">
+        <form onSubmit={handleSubmit} className="flex flex-col">
         <label className="border-red-700" htmlFor="recipe-title">
             Input Recipe Title
         </label>
