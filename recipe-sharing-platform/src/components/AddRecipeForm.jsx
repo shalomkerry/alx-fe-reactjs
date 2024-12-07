@@ -2,8 +2,8 @@ import { useState,useEffect } from "react";
 const AddRecipe = ()=>{
     const[inputFields, setInputFields] = useState({
         title:'',
-        image:'',
-        recipe:''
+        steps:'',
+        ingredients:''
     })
   const [errors, setErrors] = useState({})
   const[submitting,setSubmitting] = useState(false)
@@ -14,8 +14,8 @@ let errors = {}
 if(inputValues.title.length<3){
     errors.title = "Food name can't be less than 3 word "
 }
-if(inputValues.image.length<12){
-    errors.image = 'link to small'
+if(inputValues.steps.length<12){
+    errors.steps = 'link to small'
 }
 if(inputValues.recipe.length<10){
     errors.recipe = 'food recipe small'
@@ -52,21 +52,21 @@ setSubmitting(true)
 {errors.title? (
     <p className="text-red-700">Title can't be 3 letters</p>
 ):null}
-        <label className="border-red-700" for="image">
-            Input Recipe Image Link
+        <label className="border-red-700" for="steps">
+            Input Recipe steps Link
         </label>
-        <input type='text' name="image" className="bg-gray-700  text-white" onChange={handleChange} value={inputFields.image} />
+        <input type='text' name="steps" className="bg-gray-700  text-white" onChange={handleChange} value={inputFields.steps} />
 
-{errors.image? (
+{errors.steps? (
     <p className='text-red-700'>Link can't this small</p>
 ):null}
 
-    <label className="border-red-700" for="recipe">
-            Input Recipe 
+    <label className="border-red-700" for="ingredients">
+            Input ingredients 
         </label>
-        <input type="text" name="recipe" className="bg-gray-700  text-white" value={inputFields.recipe}onChange={handleChange}  />
+        <input type="text" name="ingredients" className="bg-gray-700  text-white" value={inputFields.ingredients}onChange={handleChange}  />
 
-{errors.recipe? (
+{errors.ingredients? (
     <p className='text-red-700'>This can't be</p>
 ):null}
         <button type="submit" >Submit</button>
