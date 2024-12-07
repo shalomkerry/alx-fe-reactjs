@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import '../App.css'
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomePage = ()=>{
 const [recipe,setRecipe] = useState([]);
