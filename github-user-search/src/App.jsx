@@ -18,7 +18,6 @@ const handleSubmit = async(e) => {
   console.log(userName)
 if(userName !==''){
 let data = await fetchUserData(userName);
-if(da)
 setUserData(data)
 
  return data; 
