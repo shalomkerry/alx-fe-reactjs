@@ -1,7 +1,7 @@
 import fetchUserData from "../services/githubService";
 import userNameStore from "../stores/userName";
 
-const Search = (){
+const Search = ()=>{
 
 
  const [userData, setUserData] = useState(null);
