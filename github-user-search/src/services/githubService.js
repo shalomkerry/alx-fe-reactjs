@@ -1,7 +1,7 @@
 import axios from 'axios';
 const fetchUserData = async (userName) => {
 
-    const token =  "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";
+    const token = REACT_APP_GITHUB_API_KEY;
 
     try {
         const response = await axios.get(`https://api.github.com/users/${userName}`,{
