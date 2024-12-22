@@ -64,7 +64,7 @@ const Search = () => {
           Submit
         </button>
       </form>
-
+    {/* {userData.map} */}
       {userData && (
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-96 text-center">
           <img
