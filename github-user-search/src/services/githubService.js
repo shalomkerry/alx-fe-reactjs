@@ -9,7 +9,10 @@ const fetchUserData = async (userName) => {
                 Authorization:`Bearer ${token}`
             }
         });
+        if(userName){
+            const response = await axios.get("https://api.github.com/search/users?q", "location", "minRepos")
         
+        }
         return response.data;
     } catch (error) {
         console.error('Error fetching GitHub user:', error);
