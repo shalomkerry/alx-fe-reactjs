@@ -1,8 +1,32 @@
+import fetchUserData from "../services/githubService";
+import userNameStore from "../stores/userName";
+
 const Search = (){
 
-  let [userData, setUserData]= useState(null)
+
+ const [userData, setUserData] = useState(null);
+ 
 const userName= userNameStore((state)=>state.userName)
 const setUserName= userNameStore((state)=>state.setUserName)
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      setLoading(true); 
+      try {
+        const data = await fetchUserData(userName);
+        setUserData(data);
+        setError(null);
+      } catch (err) {
+        setError("Looks like we can't find the user");
+      } finally {
+        setLoading(false); 
+      }
+    };
+       getData();
+  }, [userName]);
+
   const handleChange = (e)=>{
     setUserName(e.target.value)
   }
@@ -13,9 +37,12 @@ if(userName !==''){
 let data = await fetchUserData(userName);
 setUserData(data)
 
+
  return data; 
 }
 }
+  if (loading) return <p>Loading data, please wait...</p>; // Or use a spinner
+  if (error) return <p>{error}</p>;
   return (
     <>
 
